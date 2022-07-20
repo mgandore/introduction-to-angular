@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomButtonComponent implements OnInit {
 
+	public numOfClicks: number = 0;
+
 	public constructor() { }
 
 	public ngOnInit(): void {
+	}
+
+	public increment(): void {
+		this.numOfClicks++;
 	}
 
 }
