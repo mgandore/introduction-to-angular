@@ -1,0 +1,13 @@
+button {
+	height: 50px;
+	width: 100px;
+	background-color: rgb(220, 20, 60);
+	color: rgb(255, 255, 255);
+}
+
+button:active {
+	height: 48px;
+	width: 98px;
+	background-color: rgb(255, 0, 51);
+	color: rgb(255, 255, 255);
+}
