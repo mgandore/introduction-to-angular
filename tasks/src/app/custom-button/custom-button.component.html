@@ -1,2 +1,3 @@
-<button (click)="toggleInput()">Enabled:{{isEnabled}}</button>
-<input type="text" placeholder="Name" [disabled]="!(isEnabled)" />
+<button (click)="toggleInput()">{{isInputEnabled ? "Disable" : "Enable"}}</button>
+<input (keyup)="updateGreet($event)" type=" text" placeholder="Name" [disabled]="!(isInputEnabled)" />
+<p>Greetings {{inputText}}</p>
