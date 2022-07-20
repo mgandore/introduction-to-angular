@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CustomButtonComponent implements OnInit {
 
 	public isInputEnabled: boolean = false;
-	public inputText: string = '';
+	public inputText: string = "";
 
 	public constructor() { }
 
@@ -20,6 +20,6 @@ export class CustomButtonComponent implements OnInit {
 	}
 
 	public updateGreet(event: any): void {
-		this.inputText += event.target.value[event.target.value.length - 1];
+		this.inputText = event.target.value;
 	}
 }
