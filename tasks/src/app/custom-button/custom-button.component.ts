@@ -7,15 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomButtonComponent implements OnInit {
 
-	public numOfClicks: number = 0;
+	public isEnabled: boolean = false;
 
 	public constructor() { }
 
 	public ngOnInit(): void {
 	}
 
-	public increment(): void {
-		this.numOfClicks++;
+	public toggleInput(): void {
+		if (this.isEnabled) {
+			this.isEnabled = false;
+		} else {
+			this.isEnabled = true;
+		}
 	}
 
 }

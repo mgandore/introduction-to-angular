@@ -1,1 +1,2 @@
-<button (click)="increment()">Number of clicks: {{numOfClicks}}</button>
+<button (click)="toggleInput()">Enabled:{{isEnabled}}</button>
+<input type="text" placeholder="Name" [disabled]="!(isEnabled)" />
