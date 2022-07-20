@@ -1,1 +1,3 @@
-<button (click)="increment()">Number of clicks: {{numOfClicks}}</button>
+<button (click)="toggleInput()">{{isInputEnabled ? "Disable" : "Enable"}}</button>
+<input (keyup)="updateGreet($event)" type="text" placeholder="Name" [disabled]="!isInputEnabled" />
+<p>Greetings {{inputText}}</p>
