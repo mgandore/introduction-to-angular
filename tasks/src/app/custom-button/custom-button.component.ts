@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomButtonComponent implements OnInit {
 
-	constructor() { }
+	public constructor() { }
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 	}
 
 }
