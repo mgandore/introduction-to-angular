@@ -1,0 +1,4 @@
+<button (click)="toggleList()">{{isListShowing ? "Hide" : "Show"}}</button>
+<ol *ngIf="isListShowing">
+	<li *ngFor="let name of names">{{name}}</li>
+</ol>
