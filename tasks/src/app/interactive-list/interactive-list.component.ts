@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 	styleUrls: ["./interactive-list.component.css"]
 })
 
-export class InteractiveList {
+export class InteractiveListComponent {
 
 	public names: string[] = ["Catalin", "Mihai", "Daniel"];
 	public isListShowing = false;

@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
-import { InteractiveList } from './interactive-list/interactive-list.component';
+import { InteractiveListComponent } from './interactive-list/interactive-list.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		CustomButtonComponent,
-		InteractiveList
+		InteractiveListComponent
 	],
 	imports: [
 		BrowserModule
