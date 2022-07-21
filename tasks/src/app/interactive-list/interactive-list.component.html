@@ -1,4 +1,5 @@
 <button (click)="toggleList()">{{isListShowing ? "Hide" : "Show"}}</button>
 <ol *ngIf="isListShowing">
-	<li *ngFor="let name of names" [ngClass]="{'highlight-name' : name === 'Mihai'}">{{name}}</li>
+	<li *ngFor="let name of names; let i = index" [ngClass]="{'highlight-name' : name === 'Mihai'}"
+		[ngStyle]="{'font-size' : i % 2 == 0 ? '30px' : null}">{{name}}</li>
 </ol>
