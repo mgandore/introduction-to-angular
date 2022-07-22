@@ -12,3 +12,17 @@ button:active {
 	background-color: rgb(255, 0, 51);
 	color: rgb(255, 255, 255);
 }
+
+.success {
+	height: 50px;
+	width: 100px;
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+}
+
+.success:active {
+	height: 48px;
+	width: 98px;
+	background-color: rgb(0, 0, 255);
+	color: rgb(255, 255, 255);
+}

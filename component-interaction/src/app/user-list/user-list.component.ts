@@ -47,4 +47,23 @@ export class UserListComponent implements OnInit {
 		alert(`User with Id: ${event} will be deleted`)
 		this.allUsers = this.allUsers.filter((user) => user.id !== event);
 	}
+
+	public getRandomStr(): string {
+		let randomStr = "";
+		const characters = "abcdefghijklmnopqrstuvxyz";
+		randomStr += characters.charAt(Math.floor(Math.random() * characters.length)).toUpperCase();
+		for (let i = 0; i < 5; i++) {
+			randomStr += characters.charAt(Math.floor(Math.random() * characters.length));
+		}
+		return randomStr
+	}
+
+	public handleAddClick(): void {
+		this.allUsers.push(
+			{
+				id: Math.floor(Math.random() * 100),
+				name: this.getRandomStr(),
+				contact: this.getRandomStr()
+			})
+	}
 }

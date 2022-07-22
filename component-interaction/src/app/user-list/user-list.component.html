@@ -2,3 +2,5 @@
 
 <user-details *ngFor="let user of allUsers" [user]="user" (onDeleteUser)="handleDeleteUser($event)">
 </user-details>
+<br><br>
+<button class="success" (click)="handleAddClick()">Add User</button>
