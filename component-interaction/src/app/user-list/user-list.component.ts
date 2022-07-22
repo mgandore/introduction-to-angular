@@ -34,8 +34,7 @@ export class UserListComponent implements OnInit {
 			},
 
 			{
-				name: "",
-				contact: ""
+				name: "Name_4",
 			}
 		]
 	}
