@@ -48,22 +48,22 @@ export class UserListComponent implements OnInit {
 		this.allUsers = this.allUsers.filter((user) => user.id !== event);
 	}
 
-	public getRandomStr(): string {
-		let randomStr = "";
-		const characters = "abcdefghijklmnopqrstuvxyz";
-		randomStr += characters.charAt(Math.floor(Math.random() * characters.length)).toUpperCase();
+	public getRandomText(): string {
+		let randomText: string = "";
+		const alphabetLetters: string = "abcdefghijklmnopqrstuvxyz";
+		randomText += alphabetLetters.charAt(Math.floor(Math.random() * alphabetLetters.length)).toUpperCase();
 		for (let i = 0; i < 5; i++) {
-			randomStr += characters.charAt(Math.floor(Math.random() * characters.length));
+			randomText += alphabetLetters.charAt(Math.floor(Math.random() * alphabetLetters.length));
 		}
-		return randomStr
+		return randomText;
 	}
 
 	public handleAddClick(): void {
 		this.allUsers.push(
 			{
 				id: Math.floor(Math.random() * 100),
-				name: this.getRandomStr(),
-				contact: this.getRandomStr()
-			})
+				name: this.getRandomText(),
+				contact: this.getRandomText()
+			});
 	}
 }
