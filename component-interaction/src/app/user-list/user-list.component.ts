@@ -41,8 +41,6 @@ export class UserListComponent implements OnInit {
 				name: "Name_4",
 			}
 		];
-
-
 	}
 
 	public deleteSelectedUser(event: number): void {
