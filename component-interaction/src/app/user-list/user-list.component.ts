@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { UserModel } from "../user.model";
 
@@ -8,7 +8,7 @@ import { UserModel } from "../user.model";
 	styleUrls: ["./user-list.component.css"]
 })
 
-export class UserListComponent {
+export class UserListComponent implements OnInit {
 
 	public allUsers: UserModel[] = [];
 
