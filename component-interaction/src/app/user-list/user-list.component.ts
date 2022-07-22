@@ -43,8 +43,8 @@ export class UserListComponent implements OnInit {
 		];
 	}
 
-	public deleteSelectedUser(event: number): void {
-		alert(`User with Id: ${event} deleted`)
+	public handleDeleteUser(event: number): void {
+		alert(`User with Id: ${event} will be deleted`)
 		this.allUsers = this.allUsers.filter((user) => user.id !== event);
 	}
 }

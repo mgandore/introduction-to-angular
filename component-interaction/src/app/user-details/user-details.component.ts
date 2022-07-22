@@ -14,13 +14,9 @@ export class UserDetailsComponent {
 	public user?: UserModel;
 
 	@Output()
-	public selectedUserEmitter = new EventEmitter<number>()
+	public onDeleteUser = new EventEmitter<number>()
 
-	public getUserId(): number | undefined {
-		return this.user?.id;
-	}
-
-	public sendId() {
-		this.selectedUserEmitter.emit(this.getUserId());
+	public handleDeleteUser() {
+		this.onDeleteUser.emit(this.user?.id);
 	}
 }

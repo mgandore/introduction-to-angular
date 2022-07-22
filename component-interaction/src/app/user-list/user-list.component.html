@@ -1,4 +1,4 @@
 <h2>Users and their details:</h2>
 
-<user-details *ngFor="let user of allUsers" [user]="user" (selectedUserEmitter)="deleteSelectedUser($event)">
+<user-details *ngFor="let user of allUsers" [user]="user" (onDeleteUser)="handleDeleteUser($event)">
 </user-details>
