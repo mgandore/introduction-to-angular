@@ -11,5 +11,5 @@ import { UserModel } from "../user.model";
 export class UserDetailsComponent {
 
 	@Input()
-	public user: UserModel | undefined;
+	public user?: UserModel;
 }
