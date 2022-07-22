@@ -16,7 +16,7 @@ export class UserDetailsComponent {
 	@Output()
 	public onDeleteUser = new EventEmitter<number>()
 
-	public handleDeleteUser() {
+	public handleDeleteClick() {
 		this.onDeleteUser.emit(this.user?.id);
 	}
 }
