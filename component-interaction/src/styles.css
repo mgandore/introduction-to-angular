@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+	height: 30px;
+	width: 60px;
+	background-color: rgb(220, 20, 60);
+	color: rgb(255, 255, 255);
+}
+
+button:active {
+	height: 28px;
+	width: 58px;
+	background-color: rgb(255, 0, 51);
+	color: rgb(255, 255, 255);
+}

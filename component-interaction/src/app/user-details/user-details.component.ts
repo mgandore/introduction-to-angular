@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { UserModel } from "../user.model";
 
@@ -12,4 +12,15 @@ export class UserDetailsComponent {
 
 	@Input()
 	public user?: UserModel;
+
+	@Output()
+	public selectedUserEmitter = new EventEmitter<number>()
+
+	public getUserId(): number | undefined {
+		return this.user?.id;
+	}
+
+	public sendId() {
+		this.selectedUserEmitter.emit(this.getUserId());
+	}
 }
