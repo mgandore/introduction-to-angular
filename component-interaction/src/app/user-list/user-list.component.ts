@@ -73,7 +73,11 @@ export class UserListComponent implements OnInit {
 	}
 
 	public handleSelectedUser(event: number): void {
-		this.selectedUsersId.push(event);
+		if (this.selectedUsersId.includes(event)) {
+			this.selectedUsersId = this.selectedUsersId.filter((item) => item !== event);
+		} else {
+			this.selectedUsersId.push(event);
+		}
 	}
 
 	public deleteSelectedUsers(): void {
