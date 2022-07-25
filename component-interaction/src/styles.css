@@ -13,16 +13,24 @@ button:active {
 	color: rgb(255, 255, 255);
 }
 
-.success {
+.success,
+.rm-selected {
 	height: 50px;
 	width: 100px;
 	background-color: rgb(0, 0, 255);
 	color: rgb(255, 255, 255);
+
+	margin: 10px;
 }
 
-.success:active {
+.success:active,
+.rm-selected:active {
 	height: 48px;
 	width: 98px;
 	background-color: rgb(0, 0, 255);
-	color: rgb(255, 255, 255);
+}
+
+.rm-selected,
+.rm-selected:active {
+	background-color: rgb(255, 98, 7);
 }

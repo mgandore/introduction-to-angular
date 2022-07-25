@@ -1,6 +1,6 @@
 <h2>Users and their details:</h2>
 <button class="success" (click)="handleAddClick()">Add User</button>
-<button class="success" *ngIf="existsSelected()" (click)="deleteSelectedUsers()">Del
+<button class="rm-selected" *ngIf="existsSelected()" (click)="deleteSelectedUsers()">Del
 	Selected</button>
 <user-details *ngFor="let user of allUsers" [user]="user" (onDeleteUser)="handleDeleteUser($event)"
 	(onSelectUser)="handleSelectedUser($event)">
