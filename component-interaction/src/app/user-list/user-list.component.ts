@@ -11,7 +11,7 @@ import { UserModel } from "../user.model";
 export class UserListComponent implements OnInit {
 
 	public allUsers: UserModel[] = [];
-	public selectedUsersId: number[] = [];
+	public selectedUsersIds: number[] = [];
 
 	public ngOnInit() {
 		this.prepareUsers();
@@ -68,23 +68,19 @@ export class UserListComponent implements OnInit {
 			});
 	}
 
-	public existsSelected(): boolean {
-		return this.selectedUsersId.length > 0;
-	}
-
 	public handleSelectedUser(event: number): void {
-		if (this.selectedUsersId.includes(event)) {
-			this.selectedUsersId = this.selectedUsersId.filter((item) => item !== event);
+		if (this.selectedUsersIds.includes(event)) {
+			this.selectedUsersIds = this.selectedUsersIds.filter((item) => item !== event);
 		} else {
-			this.selectedUsersId.push(event);
+			this.selectedUsersIds.push(event);
 		}
 	}
 
 	public deleteSelectedUsers(): void {
 		alert("All selected users will be deleted!")
-		for (let id of this.selectedUsersId) {
+		for (let id of this.selectedUsersIds) {
 			this.allUsers = this.allUsers.filter((user) => user.id !== id);
 		}
-		this.selectedUsersId = [];
+		this.selectedUsersIds = [];
 	}
 }
