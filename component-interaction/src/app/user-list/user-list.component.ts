@@ -68,18 +68,18 @@ export class UserListComponent implements OnInit {
 			});
 	}
 
-	public handleSelectedUser(event: number): void {
-		if (this.selectedUsersIds.includes(event)) {
-			this.selectedUsersIds = this.selectedUsersIds.filter((item) => item !== event);
+	public handleSelectedUser(userId: number): void {
+		if (this.selectedUsersIds.includes(userId)) {
+			this.selectedUsersIds = this.selectedUsersIds.filter((userId) => userId !== userId);
 		} else {
-			this.selectedUsersIds.push(event);
+			this.selectedUsersIds.push(userId);
 		}
 	}
 
-	public deleteSelectedUsers(): void {
+	public handleDeleteSelectedClick(): void {
 		alert("All selected users will be deleted!")
-		for (let id of this.selectedUsersIds) {
-			this.allUsers = this.allUsers.filter((user) => user.id !== id);
+		for (let userId of this.selectedUsersIds) {
+			this.allUsers = this.allUsers.filter((user) => user.id !== userId);
 		}
 		this.selectedUsersIds = [];
 	}
