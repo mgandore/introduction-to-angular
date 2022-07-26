@@ -7,7 +7,6 @@ import { UserModel } from "./user.model";
 
 export class SortPipe implements PipeTransform {
 	transform(users: UserModel[], order?: string): UserModel[] {
-		console.log("TEST");
 		if (order === "DSC") {
 			return users.sort((user: any, nextUser: any) => nextUser.name < user.name ? -1 : nextUser.name > user.name ? 1 : 0);
 		}

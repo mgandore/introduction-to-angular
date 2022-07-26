@@ -47,7 +47,6 @@ export class UserListComponent implements OnInit {
 	public handleDeleteUser(event: number): void {
 		alert(`User with Id: ${event} will be deleted`)
 		this.allUsers = this.allUsers.filter((user) => user.id !== event);
-		console.log("STERGERE")
 		this.allUsers = [...this.allUsers];
 	}
 
@@ -68,7 +67,6 @@ export class UserListComponent implements OnInit {
 				name: this.getRandomText(),
 				contact: this.getRandomText()
 			});
-		console.log("ADAUGARE")
 		this.allUsers = [...this.allUsers];
 	}
 
@@ -86,7 +84,6 @@ export class UserListComponent implements OnInit {
 			this.allUsers = this.allUsers.filter((user) => user.id !== userId);
 		}
 		this.selectedUsersIds = [];
-		console.log("STERGERE SELECTIVA")
 		this.allUsers = [...this.allUsers];
 	}
 }
