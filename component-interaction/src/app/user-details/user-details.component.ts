@@ -14,9 +14,16 @@ export class UserDetailsComponent {
 	public user?: UserModel;
 
 	@Output()
-	public onDeleteUser = new EventEmitter<number>()
+	public onDelete = new EventEmitter<number>()
 
-	public handleDeleteClick() {
-		this.onDeleteUser.emit(this.user?.id);
+	@Output()
+	public onSelect = new EventEmitter<number>()
+
+	public handleDeleteClick(): void {
+		this.onDelete.emit(this.user?.id);
+	}
+
+	public handleChecked(): void {
+		this.onSelect.emit(this.user?.id);
 	}
 }
