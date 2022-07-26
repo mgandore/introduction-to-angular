@@ -68,11 +68,11 @@ export class UserListComponent implements OnInit {
 			});
 	}
 
-	public handleSelectedUser(userId: number): void {
-		if (this.selectedUsersIds.includes(userId)) {
+	public handleSelectedUser(selectedUserId: number): void {
+		if (this.selectedUsersIds.includes(selectedUserId)) {
 			this.selectedUsersIds = this.selectedUsersIds.filter((userId) => userId !== userId);
 		} else {
-			this.selectedUsersIds.push(userId);
+			this.selectedUsersIds.push(selectedUserId);
 		}
 	}
 
