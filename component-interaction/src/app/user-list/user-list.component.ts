@@ -25,24 +25,28 @@ export class UserListComponent implements OnInit {
 			{
 				id: 7,
 				name: "Catalin",
-				contact: "example@email.xyz"
+				contact: "example@email.xyz",
+				dateOfBirth: new Date(2000, 1, 1)
 			},
 
 			{
 				id: 6,
 				name: "Daniel",
-				contact: "example@email.xyz"
+				contact: "example@email.xyz",
+				dateOfBirth: new Date(2000, 1, 1)
 			},
 
 			{
 				id: 1,
 				name: "Popesco",
-				contact: "example@email.xyz"
+				contact: "example@email.xyz",
+				dateOfBirth: new Date(2000, 1, 1)
 			},
 
 			{
 				id: 2,
 				name: "Ana",
+				dateOfBirth: new Date(2000, 1, 1)
 			}
 		];
 	}
@@ -63,12 +67,24 @@ export class UserListComponent implements OnInit {
 		return randomText;
 	}
 
+	public getRandomNumForDate(input?: string): number {
+		if (input === "year") {
+			return Math.floor(Math.random() * 100) + 1900;
+		} else if (input === "month") {
+			return Math.floor(Math.random() * 12) + 1;
+		}
+		return Math.floor(Math.random() * 31) + 1;
+
+
+	}
+
 	public handleAddClick(): void {
 		this.allUsers.push(
 			{
 				id: Math.floor(Math.random() * 100),
 				name: this.getRandomText(),
-				contact: this.getRandomText()
+				contact: this.getRandomText(),
+				dateOfBirth: new Date(this.getRandomNumForDate("year"), this.getRandomNumForDate("month"), this.getRandomNumForDate())
 			});
 		this.allUsers = [...this.allUsers];
 	}
