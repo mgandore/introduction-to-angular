@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
 import { UserModel } from "../user.model";
+import { OrderTypeEnum } from '../orderType.enum';
+
 
 @Component({
 	selector: "user-list",
@@ -12,6 +14,7 @@ export class UserListComponent implements OnInit {
 
 	public allUsers: UserModel[] = [];
 	public selectedUsersIds: number[] = [];
+	public orderType = OrderTypeEnum;
 
 	public ngOnInit() {
 		this.prepareUsers();

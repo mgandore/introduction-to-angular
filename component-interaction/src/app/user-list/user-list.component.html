@@ -2,6 +2,6 @@
 <button class="success" (click)="handleAddClick()">Add User</button>
 <button class="rm-selected" *ngIf="selectedUsersIds.length > 0" (click)="handleDeleteSelectedClick()">Del
 	Selected</button>
-<user-details *ngFor="let user of allUsers | sort: 'ASC'" [user]="user" (onDelete)="handleDeleteUser($event)"
+<user-details *ngFor="let user of allUsers | sort: orderType.ASC" [user]="user" (onDelete)="handleDeleteUser($event)"
 	(onSelect)="handleSelectedUser($event)"></user-details>
 <br>
