@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
 import { UserModel } from "../user.model";
+import { OrderTypeEnum } from '../orderType.enum';
+
 
 @Component({
 	selector: "user-list",
@@ -12,6 +14,7 @@ export class UserListComponent implements OnInit {
 
 	public allUsers: UserModel[] = [];
 	public selectedUsersIds: number[] = [];
+	public orderType = OrderTypeEnum;
 
 	public ngOnInit() {
 		this.prepareUsers();
@@ -20,26 +23,26 @@ export class UserListComponent implements OnInit {
 	private prepareUsers(): void {
 		this.allUsers = [
 			{
-				id: 0,
-				name: "Name_1",
-				contact: "Contact_1"
+				id: 7,
+				name: "Catalin",
+				contact: "example@email.xyz"
+			},
+
+			{
+				id: 6,
+				name: "Daniel",
+				contact: "example@email.xyz"
 			},
 
 			{
 				id: 1,
-				name: "Name_2",
-				contact: "Contact_2"
+				name: "Popesco",
+				contact: "example@email.xyz"
 			},
 
 			{
 				id: 2,
-				name: "Name_3",
-				contact: "Contact_3"
-			},
-
-			{
-				id: 3,
-				name: "Name_4",
+				name: "Ana",
 			}
 		];
 	}
@@ -47,6 +50,7 @@ export class UserListComponent implements OnInit {
 	public handleDeleteUser(event: number): void {
 		alert(`User with Id: ${event} will be deleted`)
 		this.allUsers = this.allUsers.filter((user) => user.id !== event);
+		this.allUsers = [...this.allUsers];
 	}
 
 	public getRandomText(): string {
@@ -66,6 +70,7 @@ export class UserListComponent implements OnInit {
 				name: this.getRandomText(),
 				contact: this.getRandomText()
 			});
+		this.allUsers = [...this.allUsers];
 	}
 
 	public handleSelectedUser(selectedUserId: number): void {
@@ -82,5 +87,6 @@ export class UserListComponent implements OnInit {
 			this.allUsers = this.allUsers.filter((user) => user.id !== userId);
 		}
 		this.selectedUsersIds = [];
+		this.allUsers = [...this.allUsers];
 	}
 }
