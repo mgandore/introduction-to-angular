@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
 				id: 7,
 				name: "Catalin",
 				contact: "example@email.xyz",
-				dateOfBirth: new Date(2000, 1, 1)
+				dateOfBirth: new Date(2005, 1, 1)
 			},
 
 			{
@@ -40,13 +40,13 @@ export class UserListComponent implements OnInit {
 				id: 1,
 				name: "Popesco",
 				contact: "example@email.xyz",
-				dateOfBirth: new Date(2000, 1, 1)
+				dateOfBirth: new Date(2012, 1, 1)
 			},
 
 			{
 				id: 2,
 				name: "Ana",
-				dateOfBirth: new Date(2000, 1, 1)
+				dateOfBirth: new Date(1990, 1, 1)
 			}
 		];
 	}
