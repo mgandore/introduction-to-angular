@@ -3,5 +3,5 @@
 <button class="rm-selected" *ngIf="selectedUsersIds.length > 0" (click)="handleDeleteSelectedClick()">Del
 	Selected</button>
 <user-details *ngFor="let user of allUsers | sort: orderType.ASC" [user]="user" (onDelete)="handleDeleteUser($event)"
-	(onSelect)="handleSelectedUser($event)"></user-details>
+	(onSelect)="handleSelectedUser($event)" [ngClass]="{adult: user.dateOfBirth | getAge | isAdult}"></user-details>
 <br>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
 import { UserModel } from "../user.model";
-import { OrderTypeEnum } from '../orderType.enum';
+import { OrderTypeEnum } from "../order-type.enum";
+import { InputDateEnum } from "../input-date.enum";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class UserListComponent implements OnInit {
 	public allUsers: UserModel[] = [];
 	public selectedUsersIds: number[] = [];
 	public orderType = OrderTypeEnum;
+	public dateType = InputDateEnum;
 
 	public ngOnInit() {
 		this.prepareUsers();
@@ -25,24 +27,28 @@ export class UserListComponent implements OnInit {
 			{
 				id: 7,
 				name: "Catalin",
-				contact: "example@email.xyz"
+				contact: "example@email.xyz",
+				dateOfBirth: new Date(2005, 1, 1)
 			},
 
 			{
 				id: 6,
 				name: "Daniel",
-				contact: "example@email.xyz"
+				contact: "example@email.xyz",
+				dateOfBirth: new Date(2000, 1, 1)
 			},
 
 			{
 				id: 1,
 				name: "Popesco",
-				contact: "example@email.xyz"
+				contact: "example@email.xyz",
+				dateOfBirth: new Date(2012, 1, 1)
 			},
 
 			{
 				id: 2,
 				name: "Ana",
+				dateOfBirth: new Date(1990, 1, 1)
 			}
 		];
 	}
@@ -63,12 +69,27 @@ export class UserListComponent implements OnInit {
 		return randomText;
 	}
 
+	public getRandomNumForDate(input: InputDateEnum): number {
+		switch (input) {
+			case InputDateEnum.YEAR:
+				return Math.floor(Math.random() * 100) + 1900;
+			case InputDateEnum.MONTH:
+				return Math.floor(Math.random() * 12) + 1;
+			case InputDateEnum.DAY:
+				return Math.floor(Math.random() * 31) + 1;
+		}
+	}
+
 	public handleAddClick(): void {
 		this.allUsers.push(
 			{
 				id: Math.floor(Math.random() * 100),
 				name: this.getRandomText(),
-				contact: this.getRandomText()
+				contact: this.getRandomText(),
+				dateOfBirth: new Date(
+					this.getRandomNumForDate(this.dateType.YEAR),
+					this.getRandomNumForDate(this.dateType.MONTH),
+					this.getRandomNumForDate(this.dateType.DAY))
 			});
 		this.allUsers = [...this.allUsers];
 	}

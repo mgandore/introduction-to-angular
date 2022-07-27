@@ -1,6 +1,7 @@
 <h2>User Profile</h2>
 <div>Id: {{user?.id}}</div>
 <div>Name: {{user?.name}}</div>
+<div>Age: {{user?.dateOfBirth | getAge}} </div>
 <div>Contact Info: {{user?.contact}}</div>
 <button (click)="handleDeleteClick()">Delete</button>
 <input type="checkbox" (click)="handleChecked()">
