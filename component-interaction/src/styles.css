@@ -34,3 +34,7 @@ button:active {
 .rm-selected:active {
 	background-color: rgb(255, 98, 7);
 }
+
+.adult {
+	background-color: greenyellow;
+}
