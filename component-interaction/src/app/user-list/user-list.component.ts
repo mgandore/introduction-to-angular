@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { UserModel } from "../user.model";
 import { OrderTypeEnum } from '../orderType.enum';
+import { InputDateEnum } from "../inputDate.enum";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class UserListComponent implements OnInit {
 	public allUsers: UserModel[] = [];
 	public selectedUsersIds: number[] = [];
 	public orderType = OrderTypeEnum;
+	public dateType = InputDateEnum;
 
 	public ngOnInit() {
 		this.prepareUsers();
@@ -67,15 +69,20 @@ export class UserListComponent implements OnInit {
 		return randomText;
 	}
 
-	public getRandomNumForDate(input?: string): number {
-		if (input === "year") {
-			return Math.floor(Math.random() * 100) + 1900;
-		} else if (input === "month") {
-			return Math.floor(Math.random() * 12) + 1;
+	public getRandomNumForDate(input: InputDateEnum): number {
+		let output: number = 0;
+		switch (input) {
+			case "year":
+				output = Math.floor(Math.random() * 100) + 1900;
+				break;
+			case "month":
+				output = Math.floor(Math.random() * 12) + 1;
+				break;
+			case "day":
+				output = Math.floor(Math.random() * 31) + 1;
+				break;
 		}
-		return Math.floor(Math.random() * 31) + 1;
-
-
+		return output;
 	}
 
 	public handleAddClick(): void {
@@ -84,7 +91,10 @@ export class UserListComponent implements OnInit {
 				id: Math.floor(Math.random() * 100),
 				name: this.getRandomText(),
 				contact: this.getRandomText(),
-				dateOfBirth: new Date(this.getRandomNumForDate("year"), this.getRandomNumForDate("month"), this.getRandomNumForDate())
+				dateOfBirth: new Date(
+					this.getRandomNumForDate(this.dateType.year),
+					this.getRandomNumForDate(this.dateType.month),
+					this.getRandomNumForDate(this.dateType.day))
 			});
 		this.allUsers = [...this.allUsers];
 	}

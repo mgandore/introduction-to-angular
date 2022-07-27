@@ -1,0 +1,5 @@
+:host(.adult) h2,
+:host(.adult) div,
+:host(.adult) input {
+	background-color: greenyellow;
+}
