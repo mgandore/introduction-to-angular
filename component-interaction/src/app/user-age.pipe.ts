@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 	name: "getAge"
 })
 export class UserAgePipe implements PipeTransform {
-	public transform(dateOfBirth: any, ...args: any[]): number {
+	public transform(dateOfBirth: Date, ...args: any[]): number {
 		return new Date().getFullYear() - dateOfBirth.getFullYear();
 	}
 }

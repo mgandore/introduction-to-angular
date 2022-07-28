@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { UserModel } from "../user.model";
 import { OrderTypeEnum } from "../order-type.enum";
 import { InputDateEnum } from "../input-date.enum";
+import { UserService } from "../user.service";
 
 
 @Component({
@@ -10,7 +11,6 @@ import { InputDateEnum } from "../input-date.enum";
 	templateUrl: "./user-list.component.html",
 	styleUrls: ["./user-list.component.css"]
 })
-
 export class UserListComponent implements OnInit {
 
 	public allUsers: UserModel[] = [];
@@ -18,39 +18,12 @@ export class UserListComponent implements OnInit {
 	public orderType = OrderTypeEnum;
 	public dateType = InputDateEnum;
 
-	public ngOnInit() {
-		this.prepareUsers();
+	public constructor(private userService: UserService) {
+
 	}
 
-	private prepareUsers(): void {
-		this.allUsers = [
-			{
-				id: 7,
-				name: "Catalin",
-				contact: "example@email.xyz",
-				dateOfBirth: new Date(2005, 1, 1)
-			},
-
-			{
-				id: 6,
-				name: "Daniel",
-				contact: "example@email.xyz",
-				dateOfBirth: new Date(2000, 1, 1)
-			},
-
-			{
-				id: 1,
-				name: "Popesco",
-				contact: "example@email.xyz",
-				dateOfBirth: new Date(2012, 1, 1)
-			},
-
-			{
-				id: 2,
-				name: "Ana",
-				dateOfBirth: new Date(1990, 1, 1)
-			}
-		];
+	public ngOnInit() {
+		this.allUsers = this.userService.getUsers();
 	}
 
 	public handleDeleteUser(event: number): void {
