@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
-import { UserModel } from "../user.model";
-import { OrderTypeEnum } from "../order-type.enum";
-import { UserService } from "../user.service";
+import { UserModel } from "../shared/user.model";
+import { OrderTypeEnum } from "../shared/order-type.enum";
+import { UserService } from "../shared/user.service";
 
 @Component({
 	selector: "user-list",
