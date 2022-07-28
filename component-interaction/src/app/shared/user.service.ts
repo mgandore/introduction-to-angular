@@ -42,10 +42,14 @@ export class UserService {
 		return this.users;
 	}
 
-	public deleteUser(id: number): UserModel[] {
-		this.users = this.users.filter((user) => user.id !== id);
-		this.users = [...this.users];
-		return this.users;
+	public deleteUser(id: number): void {
+		let index: number = 0;
+		for (let i = 0; i < this.users.length; i++) {
+			if (this.users[i].id === id) {
+				index = i;
+			}
+		}
+		this.users.splice(index, 1);
 	}
 
 	public getRandomText(): string {
@@ -69,7 +73,7 @@ export class UserService {
 		}
 	}
 
-	public addUser(): UserModel[] {
+	public addUser(): void {
 		this.users.push(
 			{
 				id: Math.floor(Math.random() * 100),
@@ -80,11 +84,9 @@ export class UserService {
 					this.getRandomNumForDate(this.dateType.MONTH),
 					this.getRandomNumForDate(this.dateType.DAY))
 			});
-		this.users = [...this.users];
-		return this.users;
 	}
 
-	public getSelectedUsers(selectedUserId: number): number[] {
+	public getSelectedUsersIds(selectedUserId: number): number[] {
 		if (this.selectedUsersIds.includes(selectedUserId)) {
 			this.selectedUsersIds = this.selectedUsersIds.filter((userId) => userId !== userId);
 		} else {
@@ -93,12 +95,10 @@ export class UserService {
 		return this.selectedUsersIds;
 	}
 
-	public deleteSelected(): UserModel[] {
+	public deleteSelected(): void {
 		for (let userId of this.selectedUsersIds) {
-			this.users = this.users.filter((user) => user.id !== userId);
+			this.deleteUser(userId);
 		}
 		this.selectedUsersIds = [];
-		this.users = [...this.users];
-		return this.users;
 	}
 }

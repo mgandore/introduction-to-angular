@@ -7,7 +7,6 @@ import { SortPipe } from "./shared/sort.pipe";
 import { UserDetailsComponent } from "./user-details/user-details.component";
 import { UserListComponent } from "./user-list/user-list.component";
 import { UserAgePipe } from "./shared/user-age.pipe";
-import { UserService } from "./shared/user.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { UserService } from "./shared/user.service";
   imports: [
     BrowserModule
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

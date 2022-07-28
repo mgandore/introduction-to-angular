@@ -25,20 +25,20 @@ export class UserListComponent implements OnInit {
 
 	public handleDeleteUser(id: number): void {
 		alert(`User with Id: ${id} will be deleted`)
-		this.allUsers = this.userService.deleteUser(id);
+		this.userService.deleteUser(id);
 	}
 
 	public handleAddClick(): void {
-		this.allUsers = this.userService.addUser();
+		this.userService.addUser();
 	}
 
 	public handleSelectedUser(selectedUserId: number): void {
-		this.selectedUsersIds = this.userService.getSelectedUsers(selectedUserId)
+		this.selectedUsersIds = this.userService.getSelectedUsersIds(selectedUserId)
 	}
 
 	public handleDeleteSelectedClick(): void {
 		alert("All selected users will be deleted!")
-		this.allUsers = this.userService.deleteSelected();
+		this.userService.deleteSelected();
 		this.selectedUsersIds = [];
 	}
 }
