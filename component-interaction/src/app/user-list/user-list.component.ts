@@ -15,9 +15,7 @@ export class UserListComponent implements OnInit {
 	public selectedUsersIds: number[] = [];
 	public orderType = OrderTypeEnum;
 
-	public constructor(private userService: UserService) {
-
-	}
+	public constructor(private userService: UserService) { }
 
 	public ngOnInit() {
 		this.allUsers = this.userService.getUsers();
