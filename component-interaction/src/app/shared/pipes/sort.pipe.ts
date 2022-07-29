@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { UserModel } from "./user.model";
-import { OrderTypeEnum } from "./order-type.enum";
+import { UserModel } from "../user.model";
+import { OrderTypeEnum } from "../enums/order-type.enum";
 
 @Pipe({
 	name: "sort"

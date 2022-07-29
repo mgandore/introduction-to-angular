@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { UserModel } from "../shared/user.model";
-import { OrderTypeEnum } from "../shared/order-type.enum";
+import { OrderTypeEnum } from "../shared/enums/order-type.enum";
 import { UserService } from "../shared/user.service";
 
 @Component({

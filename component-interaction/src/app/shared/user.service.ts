@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { InputDateEnum } from "./input-date.enum";
+import { InputDateEnum } from "./enums/input-date.enum";
 import { UserModel } from "./user.model";
 
 @Injectable({
@@ -43,13 +43,11 @@ export class UserService {
 	}
 
 	public deleteUser(id: number): void {
-		let index: number = 0;
-		for (let i = 0; i < this.users.length; i++) {
-			if (this.users[i].id === id) {
-				index = i;
-			}
+		const foundUser: UserModel | undefined = this.users.find((user: UserModel) => user.id === id);
+		if (foundUser) {
+			const index: number = this.users.indexOf(foundUser);
+			this.users.splice(index, 1);
 		}
-		this.users.splice(index, 1);
 	}
 
 	public getRandomText(): string {
