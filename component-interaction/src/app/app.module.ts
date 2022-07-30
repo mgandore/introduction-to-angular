@@ -14,23 +14,23 @@ import { AboutComponent } from "./about/about.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserDetailsComponent,
-    UserListComponent,
-    SortPipe,
-    UserAgePipe,
-    IsAdultUserPipe,
-    NotFoundComponent,
-    HomePageComponent,
-    AboutComponent,
-    UserProfileComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		UserDetailsComponent,
+		UserListComponent,
+		SortPipe,
+		UserAgePipe,
+		IsAdultUserPipe,
+		NotFoundComponent,
+		HomePageComponent,
+		AboutComponent,
+		UserProfileComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
