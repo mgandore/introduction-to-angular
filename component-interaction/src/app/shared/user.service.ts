@@ -1,11 +1,10 @@
-import { Injectable, OnDestroy } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Injectable } from "@angular/core";
 
 import { InputDateEnum } from "./enums/input-date.enum";
 import { UserModel } from "./user.model";
 
 @Injectable({
-	providedIn: 'root',
+	providedIn: "root",
 })
 export class UserService {
 	private selectedUsersIds: number[] = [];
@@ -44,8 +43,7 @@ export class UserService {
 	}
 
 	public getUser(id: number): UserModel | undefined {
-		let foundUser: UserModel | undefined = this.users.find((user: UserModel) => user.id === id);
-		return foundUser;
+		return this.users.find((user: UserModel) => user.id === id);
 	}
 
 	public deleteUser(id: number): void {

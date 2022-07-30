@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-import { AboutComponent } from './about/about.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AboutComponent } from "./about/about.component";
+import { HomePageComponent } from "./home-page/home-page.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
+import { UserListComponent } from "./user-list/user-list.component";
+import { UserProfileComponent } from "./user-profile/user-profile.component";
 
 const routes: Routes = [
   { path: "", component: HomePageComponent },
@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: "user/:id", component: UserProfileComponent },
   { path: "**", component: NotFoundComponent }
 ]
-
 
 @NgModule({
   declarations: [],

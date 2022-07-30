@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { UserModel } from '../shared/user.model';
-import { UserService } from '../shared/user.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+
+import { UserModel } from "../shared/user.model";
+import { UserService } from "../shared/user.service";
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  selector: "app-user-profile",
+  templateUrl: "./user-profile.component.html",
+  styleUrls: ["./user-profile.component.css"]
 })
 export class UserProfileComponent implements OnInit {
 
@@ -17,7 +18,11 @@ export class UserProfileComponent implements OnInit {
     private userService: UserService,
   ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
+    this.prepareUserFromURL()
+  }
+
+  private prepareUserFromURL() {
     this.route.paramMap.subscribe(params => {
       const id = Number(params.get('id'));
       const foundUser = this.userService.getUser(id);
