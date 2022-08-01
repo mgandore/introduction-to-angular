@@ -4,7 +4,7 @@ import { InputDateEnum } from "./enums/input-date.enum";
 import { UserModel } from "./user.model";
 
 @Injectable({
-	providedIn: 'root',
+	providedIn: "root",
 })
 export class UserService {
 	private selectedUsersIds: number[] = [];
@@ -40,6 +40,10 @@ export class UserService {
 
 	public getUsers(): UserModel[] {
 		return this.users;
+	}
+
+	public getUser(id: number): UserModel | undefined {
+		return this.users.find((user: UserModel) => user.id === id);
 	}
 
 	public deleteUser(id: number): void {
