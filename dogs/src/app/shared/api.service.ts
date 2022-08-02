@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 export class ApiService {
 
 	public apiData: any;
-	public dogList: string[] = [];
+	public dogNames: string[] = [];
 
 	public constructor(private http: HttpClient) { }
 
@@ -16,28 +16,28 @@ export class ApiService {
 			this.apiData = data;
 			const breedsList = this.apiData.message;
 			for (let breed in breedsList) {
-				const oneBreed = breedsList[`${breed}`];
-				if (hasSubbreeds(oneBreed)) {
-					this.dogList.concat(addSubbreeds(oneBreed, breed));
+				const subBreedNames = breedsList[`${breed}`];
+				if (this.hasSubbreeds(subBreedNames)) {
+					this.dogNames.concat(this.addSubbreeds(subBreedNames, breed));
 				} else {
-					this.dogList.push(breed)
+					this.dogNames.push(breed);
 				}
-			}
-
-			function hasSubbreeds(breedArr: string[]): boolean {
-				return breedArr.length > 0;
-			}
-
-			function addSubbreeds(oneBreed: string[], breed: string): string[] {
-				let output: string[] = [];
-				for (let i = 0; i < oneBreed.length; i++) {
-					const subbreed = oneBreed[i];
-					output.push(`${subbreed} ${breed}`);
-				}
-				return output;
 			}
 		});
-		return this.dogList;
+		return this.dogNames;
+	}
+
+	private hasSubbreeds(subBreedNames: string[]): boolean {
+		return subBreedNames.length > 0;
+	}
+
+	private addSubbreeds(subBreedNames: string[], breed: string): string[] {
+		let output: string[] = [];
+		for (let i = 0; i < subBreedNames.length; i++) {
+			const subBreed = subBreedNames[i];
+			output.push(`${subBreed} ${breed}`);
+		}
+		return output;
 	}
 
 }

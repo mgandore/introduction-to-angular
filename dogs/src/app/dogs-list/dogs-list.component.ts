@@ -9,7 +9,7 @@ import { ApiService } from "../shared/api.service";
 })
 export class DogsListComponent implements OnInit {
 
-	public dogList: string[] = [];
+	public dogNames: string[] = [];
 
 	public constructor(private apiService: ApiService) { }
 
@@ -18,6 +18,6 @@ export class DogsListComponent implements OnInit {
 	}
 
 	private prepareDogList(): void {
-		this.dogList = this.apiService.getDogs()
+		this.dogNames = this.apiService.getDogs()
 	}
 }
