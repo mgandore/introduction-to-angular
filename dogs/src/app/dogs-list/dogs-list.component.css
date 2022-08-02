@@ -1,0 +1,16 @@
+.heading {
+	text-align: center;
+}
+
+.list-container {
+	width: 300px;
+	height: 500px;
+	overflow: auto;
+
+	margin: 20px auto;
+}
+
+li {
+	font-size: 18px;
+	margin: 10px;
+}
