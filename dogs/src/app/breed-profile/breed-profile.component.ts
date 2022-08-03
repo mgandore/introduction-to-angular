@@ -15,7 +15,10 @@ export class BreedProfileComponent implements OnInit {
 	public subBreedNames: string[] = [];
 	public responeseData: any;
 
-	public constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+	public constructor(
+		private apiService: ApiService,
+		private route: ActivatedRoute
+	) { }
 
 	public ngOnInit(): void {
 		this.prepareDogName();
@@ -30,14 +33,14 @@ export class BreedProfileComponent implements OnInit {
 	}
 
 	private prepareImageURL(): void {
-		this.apiService.getImageURL(this.dogName).subscribe(data => {
+		this.apiService.getImageURL(this.dogName).subscribe((data: Object) => {
 			this.responeseData = data;
 			this.imageURL = this.responeseData.message;
 		});
 	}
 
 	private prepareDogSubBreed(): void {
-		this.apiService.getSubBreedNames(this.dogName).subscribe(data => {
+		this.apiService.getSubBreedNames(this.dogName).subscribe((data: Object) => {
 			this.responeseData = data;
 			const subBreedList = this.responeseData.message;
 			for (let subBreed of subBreedList) {
