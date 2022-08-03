@@ -10,6 +10,7 @@ import { ApiService } from "../shared/api.service";
 export class DogsListComponent implements OnInit {
 
 	public dogNames: string[] = [];
+	public responseData: any;
 
 	public constructor(private apiService: ApiService) { }
 
@@ -18,6 +19,12 @@ export class DogsListComponent implements OnInit {
 	}
 
 	private prepareDogList(): void {
-		this.dogNames = this.apiService.getDogs()
+		this.apiService.getDogNames().subscribe(data => {
+			this.responseData = data;
+			const dogNamseList = this.responseData.message;
+			for (let dogName in dogNamseList) {
+				this.dogNames.push(dogName);
+			}
+		});
 	}
 }

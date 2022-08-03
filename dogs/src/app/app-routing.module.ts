@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router"
+import { RouterModule, Routes } from "@angular/router";
 
+import { BreedProfileComponent } from "./breed-profile/breed-profile.component";
 import { DogsListComponent } from "./dogs-list/dogs-list.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 
 const routes: Routes = [
 	{ path: "", component: DogsListComponent },
-	{ path: "breeds", component: DogsListComponent },
+	{ path: "breed/:name", component: BreedProfileComponent },
 	{ path: "**", component: NotFoundComponent }
 ];
 

@@ -6,12 +6,14 @@ import { AppComponent } from "./app.component";
 import { DogsListComponent } from "./dogs-list/dogs-list.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { AppRoutingRoutingModule } from "./app-routing.module";
+import { BreedProfileComponent } from "./breed-profile/breed-profile.component";
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		DogsListComponent,
-		NotFoundComponent
+		NotFoundComponent,
+		BreedProfileComponent
 	],
 	imports: [
 		BrowserModule,
