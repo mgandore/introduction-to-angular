@@ -7,13 +7,15 @@ import { DogsListComponent } from "./dogs-list/dogs-list.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { AppRoutingRoutingModule } from "./app-routing.module";
 import { BreedProfileComponent } from "./breed-profile/breed-profile.component";
+import { SubBreedProfileComponent } from "./sub-breed-profile/sub-breed-profile.component";
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		DogsListComponent,
 		NotFoundComponent,
-		BreedProfileComponent
+		BreedProfileComponent,
+		SubBreedProfileComponent
 	],
 	imports: [
 		BrowserModule,

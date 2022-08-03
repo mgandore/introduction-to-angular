@@ -1,6 +1,8 @@
 <h1 class="heading">Dogs</h1>
 <div class="list-container">
 	<ul>
-		<li *ngFor="let dogName of dogNames"><a [routerLink]="['breed/', dogName]">{{dogName | titlecase}}</a></li>
+		<li *ngFor="let dogName of dogNames">
+			<a [routerLink]="['breed/', dogName]">{{dogName | titlecase}}</a>
+		</li>
 	</ul>
 </div>
