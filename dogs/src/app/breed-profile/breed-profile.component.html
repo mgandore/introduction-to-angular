@@ -1,4 +1,4 @@
-<button routerLink="">All dogs</button>
+<button routerLink="">All Dogs</button>
 <div class="container">
 	<h1>{{dogName | titlecase}}</h1>
 	<div class="image-container">
@@ -9,6 +9,6 @@
 		<h2>This breed has no sub-breeds :(</h2>
 	</ng-template>
 	<ul>
-		<li *ngFor="let breed of subBreedNames"><a href="#">{{breed}}</a></li>
+		<li *ngFor="let subBreed of subBreedNames"><a routerLink="{{subBreed}}">{{subBreed}}</a></li>
 	</ul>
 </div>

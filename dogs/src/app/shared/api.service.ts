@@ -21,4 +21,8 @@ export class ApiService {
 		return this.http.get(`https://dog.ceo/api/breed/${dogName}/list`);
 	}
 
+	public getSubBreedImageURL(dogName: string, subBreedName: string): Observable<Object> {
+		return this.http.get(`https://dog.ceo/api/breed/${dogName}/${subBreedName}/images/random`);
+	}
+
 }

@@ -6,18 +6,8 @@
 }
 
 img {
-	height: 250px;
+	height: 400px;
 	width: auto;
-}
-
-ul {
-	height: 150px;
-	overflow: auto;
-}
-
-li {
-	font-size: 18px;
-	margin: 10px;
 }
 
 button {
