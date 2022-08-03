@@ -9,6 +9,8 @@
 		<h2>This breed has no sub-breeds :(</h2>
 	</ng-template>
 	<ul>
-		<li *ngFor="let subBreed of subBreedNames"><a routerLink="{{subBreed}}">{{subBreed}}</a></li>
+		<li *ngFor="let subBreed of subBreedNames">
+			<a routerLink="{{subBreed}}">{{subBreed}}</a>
+		</li>
 	</ul>
 </div>
