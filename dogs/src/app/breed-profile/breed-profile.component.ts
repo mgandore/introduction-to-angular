@@ -13,7 +13,6 @@ export class BreedProfileComponent implements OnInit {
 	public dogName: string = "";
 	public imageURL: string = "";
 	public subBreedNames: string[] = [];
-	public responeseData: any;
 
 	public constructor(
 		private apiService: ApiService,
@@ -33,17 +32,14 @@ export class BreedProfileComponent implements OnInit {
 	}
 
 	private prepareImageURL(): void {
-		this.apiService.getImageURL(this.dogName).subscribe((data: Object) => {
-			this.responeseData = data;
-			this.imageURL = this.responeseData.message;
+		this.apiService.getImageURL(this.dogName).subscribe((data: any) => {
+			this.imageURL = data.message;
 		});
 	}
 
 	private prepareDogSubBreed(): void {
-		this.apiService.getSubBreedNames(this.dogName).subscribe((data: Object) => {
-			this.responeseData = data;
-			const subBreedList = this.responeseData.message;
-			for (let subBreed of subBreedList) {
+		this.apiService.getSubBreedNames(this.dogName).subscribe((data: any) => {
+			for (let subBreed of data.message) {
 				this.subBreedNames.push(subBreed);
 			}
 		});
