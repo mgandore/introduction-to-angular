@@ -18,6 +18,10 @@ export class DogsListComponent implements OnInit {
 	}
 
 	private prepareDogList(): void {
-		this.dogNames = this.apiService.getDogs()
+		this.apiService.getDogNames().subscribe((data: any) => {
+			for (let dogName in data.message) {
+				this.dogNames.push(dogName);
+			}
+		});
 	}
 }
