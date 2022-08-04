@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 import { ButtonModule } from "primeng/button";
+import { TableModule } from "primeng/table";
+import { CardModule } from "primeng/card";
 
 import { AppComponent } from "./app.component";
 import { DogsListComponent } from "./dogs-list/dogs-list.component";
@@ -24,7 +26,9 @@ import { RedirectHomeBtnComponent } from "./shared/redirect-home-btn/redirect-ho
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingRoutingModule,
-		ButtonModule
+		ButtonModule,
+		TableModule,
+		CardModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

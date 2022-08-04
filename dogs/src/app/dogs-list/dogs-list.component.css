@@ -1,4 +1,4 @@
-.heading {
+/* .heading {
 	text-align: center;
 }
 
@@ -13,4 +13,16 @@
 li {
 	font-size: 18px;
 	margin: 10px;
+} */
+
+.heading {
+	text-align: center;
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.container {
+	width: 300px;
+	height: 500px;
+
+	margin: 50px auto;
 }
