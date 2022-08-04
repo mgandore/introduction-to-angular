@@ -18,7 +18,7 @@ In addition styling was facilitated by (https://www.primefaces.org/primeng/ "Pri
 
 
 ### Screenshots
-###### TO BE ADDED
+
 ![alt text](https://github.com/mgandore/introduction-to-angular/blob/home-btn-comp/dogs/preview-pics/home-page.png "Home Page") 
 ![alt text](https://github.com/mgandore/introduction-to-angular/blob/home-btn-comp/dogs/preview-pics/breed-page.png "Breed Page")
 ![alt text](https://github.com/mgandore/introduction-to-angular/blob/home-btn-comp/dogs/preview-pics/sub-breed-page.png "Sub-breed Page")
