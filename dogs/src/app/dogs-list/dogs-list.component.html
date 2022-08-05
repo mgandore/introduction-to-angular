@@ -9,7 +9,9 @@
 		</ng-template>
 		<ng-template pTemplate="body" let-dogName>
 			<tr>
-				<td><a [routerLink]="['breed/', dogName]">{{dogName | titlecase}}</a></td>
+				<td>
+					<a [routerLink]="['breed/', dogName]">{{dogName | titlecase}}</a>
+				</td>
 			</tr>
 		</ng-template>
 	</p-table>

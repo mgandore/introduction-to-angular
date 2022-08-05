@@ -11,7 +11,7 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { AppRoutingRoutingModule } from "./app-routing.module";
 import { BreedProfileComponent } from "./breed-profile/breed-profile.component";
 import { SubBreedProfileComponent } from "./sub-breed-profile/sub-breed-profile.component";
-import { RedirectHomeBtnComponent } from "./shared/redirect-home-btn/redirect-home-btn.component";
+import { RedirectHomeButtonComponent } from "./shared/redirect-home-btn/redirect-home-btn.component";
 
 @NgModule({
 	declarations: [
@@ -20,7 +20,7 @@ import { RedirectHomeBtnComponent } from "./shared/redirect-home-btn/redirect-ho
 		NotFoundComponent,
 		BreedProfileComponent,
 		SubBreedProfileComponent,
-		RedirectHomeBtnComponent
+		RedirectHomeButtonComponent
 	],
 	imports: [
 		BrowserModule,

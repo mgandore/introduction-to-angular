@@ -1,13 +1,12 @@
 import { Component } from "@angular/core";
 
 @Component({
-	selector: "app-redirect-home-btn",
+	selector: "app-redirect-home-button",
 	templateUrl: "./redirect-home-btn.component.html",
 	styleUrls: ["./redirect-home-btn.component.css"]
 })
-export class RedirectHomeBtnComponent {
+export class RedirectHomeButtonComponent {
 
 	public constructor() { }
-
 
 }
