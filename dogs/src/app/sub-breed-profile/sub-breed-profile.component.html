@@ -1,8 +1,8 @@
-<button routerLink="">All Dogs</button>
+<app-redirect-home-button></app-redirect-home-button>
 <div class="container">
-	<h1>{{dogName | titlecase}}</h1>
-	<h2>{{subBreedName | titlecase}}</h2>
-	<div class="image-container">
+	<p-card>
+		<h1>{{dogName | titlecase}}</h1>
+		<h2>{{subBreedName | titlecase}}</h2>
 		<img src="{{imageURL}}" alt="Image of a dog">
-	</div>
+	</p-card>
 </div>

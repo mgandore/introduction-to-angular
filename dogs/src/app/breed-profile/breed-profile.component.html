@@ -1,16 +1,28 @@
-<button routerLink="">All Dogs</button>
+<app-redirect-home-button></app-redirect-home-button>
+
 <div class="container">
-	<h1>{{dogName | titlecase}}</h1>
-	<div class="image-container">
+	<p-card class=card>
+		<h1>{{dogName | titlecase}}</h1>
 		<img src="{{imageURL}}" alt="Image of a dog">
-	</div>
-	<h2 *ngIf="subBreedNames.length > 0; else elseBlock">{{dogName | titlecase}} sub-breeds:</h2>
-	<ng-template #elseBlock>
-		<h2>This breed has no sub-breeds :(</h2>
-	</ng-template>
-	<ul>
-		<li *ngFor="let subBreed of subBreedNames">
-			<a routerLink="{{subBreed}}">{{subBreed}}</a>
-		</li>
-	</ul>
+
+		<p-table *ngIf="subBreedNames.length > 0; else elseBlock" [value]="subBreedNames"
+			styleClass="p-datatable-striped" [scrollable]="true" scrollHeight="270px">
+			<ng-template pTemplate="header">
+				<tr>
+					<th>Sub-breed's Name</th>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body" let-subBreed>
+				<tr>
+					<td>
+						<a [routerLink]="[subBreed]">{{subBreed | titlecase}}</a>
+					</td>
+				</tr>
+			</ng-template>
+		</p-table>
+
+		<ng-template #elseBlock>
+			<h2>This breed has no sub-breeds :(</h2>
+		</ng-template>
+	</p-card>
 </div>
