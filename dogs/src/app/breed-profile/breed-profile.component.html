@@ -1,7 +1,7 @@
 <app-redirect-home-button></app-redirect-home-button>
 
 <div class="container">
-	<p-card class=card>
+	<p-card *ngIf=" requestStatus ; else errorMsg" class=card>
 		<h1>{{dogName | titlecase}}</h1>
 		<img src="{{imageURL}}" alt="Image of a dog">
 
@@ -25,4 +25,9 @@
 			<h2>This breed has no sub-breeds :(</h2>
 		</ng-template>
 	</p-card>
+	<ng-template #errorMsg>
+		<p-card>
+			<h2>There is no such breed!</h2>
+		</p-card>
+	</ng-template>
 </div>

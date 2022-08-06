@@ -13,6 +13,7 @@ export class SubBreedProfileComponent implements OnInit {
 	public dogName: string = "";
 	public subBreedName: string = "";
 	public imageURL: string = "";
+	public requestStatus: string = "";
 
 	public constructor(
 		private apiService: ApiService,
@@ -40,7 +41,8 @@ export class SubBreedProfileComponent implements OnInit {
 	private prepareSubBreedImageURL(): void {
 		this.apiService.getSubBreedImageURL(this.dogName, this.subBreedName).subscribe((data: any) => {
 			this.imageURL = data.message;
-		})
+			this.requestStatus = data.status;
+		});
 	}
 
 }
