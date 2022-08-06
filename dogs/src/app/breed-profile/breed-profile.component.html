@@ -1,7 +1,7 @@
 <app-redirect-home-button></app-redirect-home-button>
 
 <div class="container">
-	<p-card *ngIf=" requestStatus ; else errorMsg" class=card>
+	<p-card *ngIf=" requestStatus === 'success'; else errorMsg">
 		<h1>{{dogName | titlecase}}</h1>
 		<img src="{{imageURL}}" alt="Image of a dog">
 
